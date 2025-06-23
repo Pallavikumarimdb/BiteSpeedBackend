@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: bite-speed-backend
+    env: node
+    buildCommand: npm install && npm run build
+    startCommand: npm run start
+    autoDeploy: true
+    envVars:
+      - key: DATABASE_URL
+        fromDashboard: true
