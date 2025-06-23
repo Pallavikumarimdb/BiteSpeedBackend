@@ -8,7 +8,7 @@ interface IdentifyRequest {
 }
 
 interface FormattedContact {
-  primaryContatctId: number;
+  primaryContactId: number;
   emails: string[];
   phoneNumbers: string[];
   secondaryContactIds: number[];
@@ -33,7 +33,7 @@ export async function handleIdentify({ email, phoneNumber }: IdentifyRequest): P
       }
     });
     return {
-      primaryContatctId: newContact.id,
+      primaryContactId: newContact.id,
       emails: newContact.email ? [newContact.email] : [],
       phoneNumbers: newContact.phoneNumber ? [newContact.phoneNumber] : [],
       secondaryContactIds: []
@@ -86,7 +86,7 @@ export async function handleIdentify({ email, phoneNumber }: IdentifyRequest): P
   }
 
   return {
-    primaryContatctId: primary.id,
+    primaryContactId: primary.id,
     emails: Array.from(emails),
     phoneNumbers: Array.from(phoneNumbers),
     secondaryContactIds: secondaryContactIds
